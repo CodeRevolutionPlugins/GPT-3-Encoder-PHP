@@ -2,7 +2,7 @@
 PHP BPE Text Encoder for GPT-2 / GPT-3
 
 ## About
-GPT-2 and GPT-3 use byte pair encoding to turn text into a series of integers to feed into the model. This is a javascript implementation of OpenAI's original python encoder/decoder which can be found [here](https://github.com/openai/gpt-2)
+GPT-2 and GPT-3 use byte pair encoding to turn text into a series of integers to feed into the model. This is a PHP implementation of OpenAI's original python encoder which can be found [here](https://github.com/openai/gpt-2), the main source of inspiration for writing this encoder was the NodeJS version of this encoder, found [here](https://github.com/latitudegames/GPT-3-Encoder.
 
 This specific encoder is used in one of my [WordPress plugins](https://coderevolution.ro), to count the number of tokens a string will use when sent to OpenAI API.
 
@@ -21,4 +21,6 @@ $token_array = gpt_encode($prompt);
 ```
 
 
+## TODO
 
+Create also a decoder for the package, currently only an encoder is implemented.
