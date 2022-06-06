@@ -1,0 +1,14 @@
+{
+    "name": "coderevolutionplugins/gpt-3-encoder-php",
+    "description": "PHP BPE Text Encoder for GPT-2 / GPT-3",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "CodeRevolution",
+            "email": "support@coderevolution.ro"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
