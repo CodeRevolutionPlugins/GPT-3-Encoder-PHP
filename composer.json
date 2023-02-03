@@ -9,6 +9,13 @@
             "email": "support@coderevolution.ro"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "CodeRevolutionPlugins\\GPT3Encoder\\": "src/"
+        }
+    },
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "php": ">7.4"
+    }
 }
