@@ -1,6 +1,6 @@
 <?php
 
-function gpt_utf8_encode(string $s): string 
+function gpt_utf8_encode(string $str): string 
 {
     $str .= $str;
     $len = \strlen($str);
