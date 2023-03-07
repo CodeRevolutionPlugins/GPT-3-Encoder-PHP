@@ -81,11 +81,25 @@ function gpt_encode($text)
         {
             if(isset($encoder[$x]))
             {
-                $new_tokens[$x] = $encoder[$x];
+                if(isset($new_tokens[$x]))
+                {
+                    $new_tokens[] = $encoder[$x];
+                }
+                else
+                {
+                    $new_tokens[$x] = $encoder[$x];
+                }
             }
             else
             {
-                $new_tokens[$x] = $x;
+                if(isset($new_tokens[$x]))
+                {
+                    $new_tokens[] = $x;
+                }
+                else
+                {
+                    $new_tokens[$x] = $x;
+                }
             }
         }
         foreach($new_tokens as $ninx => $nval)
