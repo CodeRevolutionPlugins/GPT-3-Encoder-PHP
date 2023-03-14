@@ -1,14 +1,34 @@
 {
-    "name": "coderevolutionplugins/gpt-3-encoder-php",
-    "description": "PHP BPE Text Encoder for GPT-2 / GPT-3",
-    "type": "library",
-    "license": "MIT",
+    "name": "CodeRevolutionPlugins/GPT-3-Encoder-PHP",
+    "description": "PHP BPE Text Encoder/Decoder for GPT-2 / GPT-3",
+    "keywords": [
+		"php",
+		"encoder",
+		"decoder",
+		"gpt-2",
+		"gpt-2-simple",
+		"gpt-3",
+		"gpt-3-prompts",
+		"gpt-2-text-generation",
+		"gpt-3-text-generation",
+		"gpt-3-prompt",
+		"gpt-3-tokenizer",
+		"gpt-2-tokenizer",
+		"gpt3-encoder",
+		"gpt3-decoder"
+	],
     "authors": [
-        {
-            "name": "CodeRevolution",
-            "email": "support@coderevolution.ro"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {}
+		{
+			"name": "CodeRevolution",
+			"homepage": "https://coderevolution.ro/"
+		}
+	],
+    "require": {
+        "php": ">=5.6"
+    },
+	"support": {
+		"issues": "https://github.com/CodeRevolutionPlugins/GPT-3-Encoder-PHP/issues",
+		"wiki": "https://github.com/CodeRevolutionPlugins/GPT-3-Encoder-PHP/wiki",
+		"source": "https://github.com/CodeRevolutionPlugins/GPT-3-Encoder-PHP"
+	}
 }
