@@ -1,5 +1,5 @@
 {
-    "name": "CodeRevolutionPlugins/GPT-3-Encoder-PHP",
+    "name": "coderevolutionplugins/gpt-3-encoder-php",
     "description": "PHP BPE Text Encoder/Decoder for GPT-2 / GPT-3",
     "keywords": [
 		"php",
@@ -26,9 +26,9 @@
     "require": {
         "php": ">=5.6"
     },
-	"support": {
-		"issues": "https://github.com/CodeRevolutionPlugins/GPT-3-Encoder-PHP/issues",
-		"wiki": "https://github.com/CodeRevolutionPlugins/GPT-3-Encoder-PHP/wiki",
-		"source": "https://github.com/CodeRevolutionPlugins/GPT-3-Encoder-PHP"
-	}
+    "support": {
+	"issues": "https://github.com/CodeRevolutionPlugins/GPT-3-Encoder-PHP/issues",
+	"wiki": "https://github.com/CodeRevolutionPlugins/GPT-3-Encoder-PHP/wiki",
+	"source": "https://github.com/CodeRevolutionPlugins/GPT-3-Encoder-PHP"
+    }
 }
