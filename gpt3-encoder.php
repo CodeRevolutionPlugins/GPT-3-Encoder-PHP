@@ -402,5 +402,6 @@ $prompt = "Many words map to one token, but some don't: indivisible. Unicode cha
 $token_array = gpt_encode($prompt);
 error_log('Token array: ' . print_r($token_array, true));
 error_log('Count: ' . count($token_array));
-
+$original_text = gpt_decode($token_array);
+error_log('Original text: ' . $original_text);
 ?>
