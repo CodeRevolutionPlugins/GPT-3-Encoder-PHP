@@ -16,13 +16,14 @@
 		"gpt-2-tokenizer",
 		"gpt3-encoder",
 		"gpt3-decoder"
-	],
+    ],
+    "license": "MIT",
     "authors": [
 		{
 			"name": "CodeRevolution",
 			"homepage": "https://coderevolution.ro/"
 		}
-	],
+    ],
     "require": {
         "php": ">=5.6"
     },
