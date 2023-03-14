@@ -96,7 +96,7 @@ function gpt_encode($text)
             {
                 if(isset($new_tokens[$x]))
                 {
-                    $new_tokens[] = $encoder[$x];
+                    $new_tokens[rand() . '---' . $x] = $encoder[$x];
                 }
                 else
                 {
@@ -107,7 +107,7 @@ function gpt_encode($text)
             {
                 if(isset($new_tokens[$x]))
                 {
-                    $new_tokens[] = $x;
+                    $new_tokens[rand() . '---' . $x] = $x;
                 }
                 else
                 {
@@ -119,7 +119,7 @@ function gpt_encode($text)
         {
             if(isset($bpe_tokens[$ninx]))
             {
-                $bpe_tokens[] = $nval;
+                $bpe_tokens[rand() . '---' . $ninx] = $nval;
             }
             else
             {
@@ -130,6 +130,65 @@ function gpt_encode($text)
     return $bpe_tokens;
 }
 
+function gpt_decode($tokens) 
+{
+    $rencoder = file_get_contents(dirname(__FILE__) . "/encoder.json");
+    $encoder = json_decode($rencoder, true);
+    if(empty($encoder))
+    {
+        error_log('Failed to load encoder.json: ' . $rencoder);
+        return false;
+    }
+    $decoder = array();
+    foreach($encoder as $index => $val)
+    {
+        $decoder[$val] = $index;
+    }
+    $raw_chars = file_get_contents(dirname(__FILE__) . "/characters.json");
+    $byte_encoder = json_decode($raw_chars, true);
+    if(empty($byte_encoder))
+    {
+        error_log('Failed to load characters.json: ' . $raw_chars);
+        return false;
+    }
+    $byte_decoder = array();
+    foreach($byte_encoder as $index => $val)
+    {
+        $byte_decoder[$val] = $index;
+    }
+    $text = '';
+    $mych_arr = [];
+    foreach($tokens as $myt)
+    {
+        if(isset($decoder[$myt]))
+        {
+            $mych_arr[] = $decoder[$myt];
+        }
+        else
+        {
+            error_log('Character not found in decoder: ' . $myt);
+        }
+    }
+    $text = implode('', $mych_arr);
+    $text_arr = preg_split('//u', $text, -1, PREG_SPLIT_NO_EMPTY);
+    $final_arr = array();
+    foreach($text_arr as $txa)
+    {
+        if(isset($byte_decoder[$txa]))
+        {
+            $final_arr[] = $byte_decoder[$txa];
+        }
+        else
+        {
+            error_log('Character not found in byte_decoder: ' . $txa);
+        }
+    }
+    $output = '';
+    for ($i = 0, $j = count($final_arr); $i < $j; ++$i) {
+        $output .= chr($final_arr[$i]);
+    }
+    return $output;
+}
 function gpt_my_filter($var)
 {
     return ($var !== NULL && $var !== FALSE && $var !== '');
